@@ -1,9 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Runtime.CompilerServices;
-
-Console.WriteLine("Hello, World!");
-
-char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+﻿char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 int playerTurn = 1;
 int choice;
@@ -48,6 +43,9 @@ do
 void ReloadBoard()
 {
     Console.Clear();
+    Console.ForegroundColor = ConsoleColor.White;
+
+    Console.WriteLine("     |     |      ");
     for (int i = 1; i <= 9; i++)
     {
         Console.ForegroundColor = arr[i] == 'O' ? ConsoleColor.Cyan : arr[i] == 'X' ? ConsoleColor.Red : ConsoleColor.White;
@@ -61,8 +59,6 @@ void ReloadBoard()
         else Console.Write("|");
     }
     Console.WriteLine("     |     |      ");
-    // Console.ResetColor();
-    Console.ForegroundColor = ConsoleColor.White;
 }
 
 void WaitLoading(string msg)
